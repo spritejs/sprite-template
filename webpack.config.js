@@ -16,6 +16,7 @@ module.exports = function (env = {}) {
       publicPath: '/js/',
       library: [toCamelCase(packageConfig.name)],
       libraryTarget: 'umd',
+      libraryExport: 'default',
     },
     // resolve: {
     //
