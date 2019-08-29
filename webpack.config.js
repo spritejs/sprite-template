@@ -8,7 +8,7 @@ function toCamelCase(str) {
 
 module.exports = function (env = {}) {
   return {
-    mode: env.production ? 'production' : 'none',
+    mode: env.mode || 'none',
     entry: './src/index',
     output: {
       path: path.resolve(__dirname, 'dist'),
@@ -17,6 +17,7 @@ module.exports = function (env = {}) {
       library: [toCamelCase(packageConfig.name)],
       libraryTarget: 'umd',
       libraryExport: 'default',
+      globalObject: 'this',
     },
     // resolve: {
     //
